@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Speech.Recognition;
+using System.Diagnostics;
 
 namespace DesktopVoiceAssistant
 {
@@ -32,7 +33,7 @@ namespace DesktopVoiceAssistant
         private void Form1_Load(object sender, EventArgs e)
         {
             Choices commands = new Choices();
-            commands.Add(new string[] { "Hello" });
+            commands.Add(new string[] { "open notepad", "open google" });
             GrammarBuilder gbuilder = new GrammarBuilder();
             gbuilder.Append(commands);
             Grammar grammar = new Grammar(gbuilder);
@@ -46,8 +47,12 @@ namespace DesktopVoiceAssistant
         {
             switch (e.Result.Text)
             {
-                case "Hello":
-                    MessageBox.Show("Hello there");
+                case "open notepad":
+                    Process.Start("notepad");
+                    break;
+
+                case "open google":
+                    Process.Start("http://google.com/");
                     break;
             }
         }
