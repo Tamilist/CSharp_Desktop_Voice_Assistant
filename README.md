@@ -4,7 +4,9 @@ This is a voice controlled assistant that can be used for various tasks like ope
 applications. More features will be added in the future.
 
 Commands:
+Open Browser
 
-Open Notepad
+Open Google
+
 Open Default Pages(Opens up Google, Github, and StackOverflow in the users default browser)
 
