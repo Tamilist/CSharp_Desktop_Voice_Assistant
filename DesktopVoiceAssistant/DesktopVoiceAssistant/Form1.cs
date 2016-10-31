@@ -29,14 +29,15 @@ namespace DesktopVoiceAssistant
             srecengine.RecognizeAsync(RecognizeMode.Multiple);
             endvoicebtn.Enabled = true;
             startvoicebtn.Enabled = false;
+            logtextbox.Text += "Hello There\n";
         }
 
-        //Sets up the different choices for the Engine
+        //Sets up the different commands for the engine to recognize
 
         private void Form1_Load(object sender, EventArgs e)
         {
             Choices commands = new Choices();
-            commands.Add(new string[] { "open notepad", "open google", "open default pages" });
+            commands.Add(new string[] { "open notepad", "open google", "open browser", "open default pages" });
             GrammarBuilder gbuilder = new GrammarBuilder();
             gbuilder.Append(commands);
             Grammar grammar = new Grammar(gbuilder);
@@ -55,16 +56,24 @@ namespace DesktopVoiceAssistant
             {
                 case "open notepad":
                     Process.Start("notepad");
+                    logtextbox.Text += "Opening NotePad\n";
                     break;
 
                 case "open google":
                     Process.Start("http://google.com/");
+                    logtextbox.Text += "Opening Google\n";
                     break;
 
                 case "open default pages":
                     System.Diagnostics.Process.Start("http://www.google.com");
                     System.Diagnostics.Process.Start("https://github.com/");
-                    logtextbox.Text += "/nOpening Pages";
+                    System.Diagnostics.Process.Start("http://stackoverflow.com/");
+                    logtextbox.Text += "Opening Pages\n";
+                    break;
+
+                case "open browser":
+                    Process.Start("http://www.google.com");
+                    logtextbox.Text += "Opening default browser\n";
                     break;
             }
         }
@@ -77,6 +86,7 @@ namespace DesktopVoiceAssistant
             srecengine.RecognizeAsyncStop();
             endvoicebtn.Enabled = false;
             startvoicebtn.Enabled = true;
+            logtextbox.Text += "Goodbye\n";
         }
     }
 }
