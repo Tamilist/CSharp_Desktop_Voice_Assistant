@@ -4,6 +4,7 @@ This is a voice controlled assistant that can be used for various tasks like ope
 applications. More features will be added in the future.
 
 Commands:
+
 Open Browser
 
 Open Google
