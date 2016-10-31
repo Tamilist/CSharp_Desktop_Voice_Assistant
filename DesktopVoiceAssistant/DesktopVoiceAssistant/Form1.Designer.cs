@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.logtextbox = new System.Windows.Forms.RichTextBox();
             this.startvoicebtn = new System.Windows.Forms.Button();
             this.endvoicebtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // logtextbox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(30, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(220, 118);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.logtextbox.Location = new System.Drawing.Point(30, 12);
+            this.logtextbox.Name = "logtextbox";
+            this.logtextbox.Size = new System.Drawing.Size(220, 118);
+            this.logtextbox.TabIndex = 0;
+            this.logtextbox.Text = "";
             // 
             // startvoicebtn
             // 
@@ -69,7 +69,7 @@
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.endvoicebtn);
             this.Controls.Add(this.startvoicebtn);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.logtextbox);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -79,7 +79,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox logtextbox;
         private System.Windows.Forms.Button startvoicebtn;
         private System.Windows.Forms.Button endvoicebtn;
     }

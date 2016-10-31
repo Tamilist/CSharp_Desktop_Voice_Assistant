@@ -21,6 +21,9 @@ namespace DesktopVoiceAssistant
             InitializeComponent();
         }
 
+        //disables the enable voice control button so it cant be clicked again until the
+        //disable voice control button is clicked
+
         private void startvoicebtn_Click(object sender, EventArgs e)
         {
             srecengine.RecognizeAsync(RecognizeMode.Multiple);
@@ -33,7 +36,7 @@ namespace DesktopVoiceAssistant
         private void Form1_Load(object sender, EventArgs e)
         {
             Choices commands = new Choices();
-            commands.Add(new string[] { "open notepad", "open google" });
+            commands.Add(new string[] { "open notepad", "open google", "open default pages" });
             GrammarBuilder gbuilder = new GrammarBuilder();
             gbuilder.Append(commands);
             Grammar grammar = new Grammar(gbuilder);
@@ -42,6 +45,9 @@ namespace DesktopVoiceAssistant
             srecengine.SetInputToDefaultAudioDevice();
             srecengine.SpeechRecognized += Srecengine_SpeechRecognized;
         }
+
+        //When the speech engine recognizes a command it will perform the appropiate action and
+        //display a message for the user
 
         private void Srecengine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
@@ -54,8 +60,17 @@ namespace DesktopVoiceAssistant
                 case "open google":
                     Process.Start("http://google.com/");
                     break;
+
+                case "open default pages":
+                    System.Diagnostics.Process.Start("http://www.google.com");
+                    System.Diagnostics.Process.Start("https://github.com/");
+                    logtextbox.Text += "/nOpening Pages";
+                    break;
             }
         }
+
+        //When the end voice control button is clicked it is disabled while
+        //the start voice control button will be re-enabled
 
         private void endvoicebtn_Click(object sender, EventArgs e)
         {
