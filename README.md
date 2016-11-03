@@ -5,6 +5,9 @@ applications. More features will be added in the future.
 
 Commands:
 
-Open Notepad
+Open Browser
+
 Open Default Pages(Opens up Google, Github, and StackOverflow in the users default browser)
+
+Open Notepad
 
