@@ -9,3 +9,5 @@ Open Browser
 
 Open Default Pages(Opens up Google, Github, and StackOverflow in the users default browser)
 
+Open Notepad
+
