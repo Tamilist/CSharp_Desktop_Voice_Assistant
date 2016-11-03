@@ -31,13 +31,15 @@
             this.logtextbox = new System.Windows.Forms.RichTextBox();
             this.startvoicebtn = new System.Windows.Forms.Button();
             this.endvoicebtn = new System.Windows.Forms.Button();
+            this.cmdlabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // logtextbox
             // 
-            this.logtextbox.Location = new System.Drawing.Point(30, 12);
+            this.logtextbox.Location = new System.Drawing.Point(129, 12);
             this.logtextbox.Name = "logtextbox";
-            this.logtextbox.Size = new System.Drawing.Size(220, 118);
+            this.logtextbox.ReadOnly = true;
+            this.logtextbox.Size = new System.Drawing.Size(143, 118);
             this.logtextbox.TabIndex = 0;
             this.logtextbox.Text = "";
             // 
@@ -62,18 +64,31 @@
             this.endvoicebtn.UseVisualStyleBackColor = true;
             this.endvoicebtn.Click += new System.EventHandler(this.endvoicebtn_Click);
             // 
+            // cmdlabel
+            // 
+            this.cmdlabel.AutoSize = true;
+            this.cmdlabel.ForeColor = System.Drawing.Color.Navy;
+            this.cmdlabel.Location = new System.Drawing.Point(211, 209);
+            this.cmdlabel.Name = "cmdlabel";
+            this.cmdlabel.Size = new System.Drawing.Size(59, 13);
+            this.cmdlabel.TabIndex = 3;
+            this.cmdlabel.Text = "Commands";
+            this.cmdlabel.Click += new System.EventHandler(this.cmdlabel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.cmdlabel);
             this.Controls.Add(this.endvoicebtn);
             this.Controls.Add(this.startvoicebtn);
             this.Controls.Add(this.logtextbox);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "DVA";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -82,6 +97,7 @@
         private System.Windows.Forms.RichTextBox logtextbox;
         private System.Windows.Forms.Button startvoicebtn;
         private System.Windows.Forms.Button endvoicebtn;
+        private System.Windows.Forms.Label cmdlabel;
     }
 }
 

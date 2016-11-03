@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Speech.Recognition;
 using System.Diagnostics;
 
+
 namespace DesktopVoiceAssistant
 {
     public partial class Form1 : Form
@@ -87,6 +88,13 @@ namespace DesktopVoiceAssistant
             endvoicebtn.Enabled = false;
             startvoicebtn.Enabled = true;
             logtextbox.Text += "Goodbye\n";
+        }
+
+        private void cmdlabel_Click(object sender, EventArgs e)
+        {
+            CommandsForm openhelp = new CommandsForm();
+            openhelp.Show();
+
         }
     }
 }
