@@ -37,8 +37,12 @@ namespace DesktopVoiceAssistant
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Array of available commands the engine can recognize
             Choices commands = new Choices();
-            commands.Add(new string[] { "open notepad", "open google", "open browser", "open default pages" });
+            commands.Add(new string[] { "open notepad", "open google", "open browser", "open default pages",
+            "open control panel", "change wallpaper"});
+
+            //sets up the engine
             GrammarBuilder gbuilder = new GrammarBuilder();
             gbuilder.Append(commands);
             Grammar grammar = new Grammar(gbuilder);
@@ -76,6 +80,13 @@ namespace DesktopVoiceAssistant
                     Process.Start("http://www.google.com");
                     logtextbox.Text += "Opening default browser\n";
                     break;
+
+                case "open control panel":
+                    Process.Start("control.exe");
+                    logtextbox.Text += "Opening Control Panel\n";
+                    break;
+
+                
             }
         }
 

@@ -67,6 +67,7 @@
             // cmdlabel
             // 
             this.cmdlabel.AutoSize = true;
+            this.cmdlabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmdlabel.ForeColor = System.Drawing.Color.Navy;
             this.cmdlabel.Location = new System.Drawing.Point(211, 209);
             this.cmdlabel.Name = "cmdlabel";
