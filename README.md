@@ -7,7 +7,5 @@ Commands:
 
 Open Browser
 
-Open Google
-
 Open Default Pages(Opens up Google, Github, and StackOverflow in the users default browser)
 
