@@ -16,7 +16,14 @@ namespace DesktopVoiceAssistant
     public partial class Form1 : Form
     {
         SpeechRecognitionEngine srecengine = new SpeechRecognitionEngine();
-        
+        WeatherSys wsobj = new WeatherSys();
+
+        //The api key and url used for accessing weather data for the users location
+        private const string apikey = "0ce521c9655fd6b32e77b9316280962e";
+
+        internal const string ForecastUrl = "http://api.openweathermap.org/data/2.5/forecast?" +
+    "q=@LOC@&mode=xml&units=imperial&APPID=" + apikey;
+
         public Form1()
         {
             InitializeComponent();
@@ -106,6 +113,17 @@ namespace DesktopVoiceAssistant
             CommandsForm openhelp = new CommandsForm();
             openhelp.Show();
 
+        }
+
+        private void forecastbtn_Click(object sender, EventArgs e)
+        {
+            if (loctextbox.Text != null)
+            {
+                // Compose the query URL.
+                string url = ForecastUrl.Replace("@LOC@", loctextbox.Text);
+                forecastresultsbox.Text = wsobj.GetFormattedXml(url);
+                citynamebox.Text = wsobj.nodenameid;
+            }
         }
     }
 }
